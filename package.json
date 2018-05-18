@@ -1,0 +1,15 @@
+{
+  "name": "picsviewx",
+  "version": "1.0.0",
+  "description": "Picture  gallery app  in Electron",
+  "main": "index.js",
+  "scripts": {
+    "dev": "electron index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AlevanteM",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^2.0.1"
+  }
+}
