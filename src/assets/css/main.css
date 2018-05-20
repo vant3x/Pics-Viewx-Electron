@@ -1,19 +1,32 @@
-body{
-    background: black;
-    color: rgb(6, 198, 198);
-    font-family: arial;
-}
-h1{
-    color: rgb(6, 198, 198);
+.full-height{
+    height: 100%;
 }
 
-div{
+.image-view{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.image-container{
+    width: 100%;
     text-align: center;
+    padding: 40px;
+    height: 90%;
 }
 
-#mensaje{
-   
-    color: #fff;
-    padding: 10px 15px;
-    background: rgb(8, 132, 132);
+.image-toolbar{
+    width: 100%;
+    align-self: flex-start;
+    position: absolute;
+}
+
+#image-displayed{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.filter-label,.select-filter{
+    margin: 0px 5px;
 }
