@@ -18,7 +18,7 @@ app.on('before-quit', () => {
 
 // Esperar a que el app esté listo para mostrar ventana
 app.on('ready', () => {
-  // creando una nueva ventana
+  // creando una nueva ventana y agregando las caracteristicas de la ventana
   let win = new BrowserWindow({
     width: 1000,
     height: 700,
