@@ -1,5 +1,7 @@
 ./node_modules
 /node_modules
+./filterous-2-2.0.0
+/filterous-2-2.0.0
 .DS_Store
 Thumbs.db
 npm-debug.log
