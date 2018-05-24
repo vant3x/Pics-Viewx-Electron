@@ -4,8 +4,10 @@
 
 // El objeto BrowserWindows nos permite cargar todo el contenido visual de la app
 
-import { app, BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 import devtools from './devtools'
+
+let win
 
 if (process.env.NODE_ENV === 'development') {
   devtools()
@@ -19,7 +21,7 @@ app.on('before-quit', () => {
 // Esperar a que el app esté listo para mostrar ventana
 app.on('ready', () => {
   // creando una nueva ventana y agregando las caracteristicas de la ventana
-  let win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 1000,
     height: 700,
     title: 'Hola Mundo!',
@@ -43,7 +45,13 @@ app.on('ready', () => {
   win.toggleDevTools()
 })
 
-ipcMain.on('ping', (event, arg) => {
-  console.log(`Se recibió ping - ${arg}`)
-  event.sender.send('pong', new Date())
+ipcMain.on('open-directory', (event) => {
+  dialog.showOpenDialog(win, {
+    title: 'Seleccione la nueva ubicación',
+    buttonLabel: 'Abrir ubicación',
+    properties: ['openDirectory']
+  },
+  (dir) => {
+    console.log(dir)
+  })
 })
